@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
+echo "Installation will take you a little time,please be patient.^_^"
 if which apt-get > /dev/null
 then
     sudo apt-get install -y ctags build-essential cmake python python-dev python3-dev fontconfig git libclang llvm-4.0 clang-4.0 libclang-4.0-dev libboost-all-dev gcc g++
@@ -49,11 +49,11 @@ cp BundleConfig.vim ~
 cp .ycm_extra_conf.py ~
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-echo "正在努力为您安装bundle程序" > TempFile
-echo "安装完毕将自动退出" >> TempFile
-echo "请耐心等待" >> Temp
+echo ""Install Bundle. > TempFile
+echo "The installation will automatically quit." >> TempFile
+echo "Please be patient." >> Temp
 vim TempFile -c "PluginInstall" -c "q" -c "q"
 rm TempFile
-echo "安装完成"
+echo "installation is complete." 
 #cd ~/.vim/bundle/YouCompleteMe
 #sudo ./install.py --clang-completer --system-libclang --system-boost
