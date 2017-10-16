@@ -168,3 +168,58 @@
     :command! -nargs=1 Rename let tpname = expand('%:t') | saveas <args> | edit <args> | call delete(expand(tpname)):w                                   " modified file name
 
 " }
+
+" create file settings{
+
+    autocmd BufNewFile *.cpp,*.cc,*.c,*.hpp,*.h,*.sh,*.py,*.java exec ":call SetTitle()" 
+    func SetTitle() 
+     if expand("%:e") == 'sh'
+	call setline(1,"\#!/bin/bash") 
+	call append(line("."), "") 
+    elseif expand("%:e") == 'py'
+        call setline(1,"#!/usr/bin/env python")
+        call append(line("."),"# coding=utf-8")
+	call append(line(".")+1, "") 
+    elseif expand("%:e") == 'cpp'
+	call setline(1,"#include <iostream.h>") 
+	call append(line("."), "") 
+    elseif expand("%:e") == 'cc'
+	call setline(1,"#include <iostream.h>") 
+	call append(line("."), "") 
+    elseif expand("%:e") == 'c'
+	call setline(1,"#include <stdio.h>") 
+	call append(line("."), "") 
+    elseif expand("%:e") == 'h'
+	call setline(1, "#pragma once")
+    elseif expand("%:e") == 'hpp'
+	call setline(1, "#pragma once")
+    elseif expand("%:e") == 'java'
+	call setline(1,"public class ".expand("%:r"))
+	call append(line("."),"")
+	endif
+    endfunc 
+    autocmd BufNewFile * normal G
+
+" }
+
+" Complie file{
+
+    map <F5> :call CompileRunGcc()<CR>
+    imap <F5> <ESC>:call CompileRunGcc()<CR>
+    func! CompileRunGcc()
+    exec "w"
+    exec "cd %:p:h"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!java %<"
+    elseif &filetype == 'sh'
+        :!./%
+    endif
+    endfunc
+" }
