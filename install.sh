@@ -51,7 +51,7 @@ cp .ycm_extra_conf.py ~
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo ""Install Bundle. > TempFile
 echo "The installation will automatically quit." >> TempFile
-echo "Please be patient." >> Temp
+echo "Please be patient." >> TempFile
 vim TempFile -c "PluginInstall" -c "q" -c "q"
 rm TempFile
 echo "installation is complete." 
