@@ -2,9 +2,11 @@
 
 " Code Completion {
 
-    " emmet {
-
+    " Emmet {
+ 
+        if isdirectory(expand("~/.vim/bundle/emmet-vim"))
         imap <F3> <Esc><C-Y>,i      " map for faster
+        endif
 
     " }
 
@@ -25,27 +27,156 @@
 
 " IDE Features {
 
-    " nerdtree {
+    " Nerdtree {
 
-          if isdirectory(expand("~/.vim/bundle/nerdtree"))
-          map <leader>nt :NERDTreeToggle<CR>           " nerdtree key map
-          nmap <leader>nf :NERDTreeFind<CR>            " Find the current file in the tree
+        if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        map  <leader>nt :NERDTreeToggle<CR>          " nerdtree key map
+        nmap <leader>nf :NERDTreeFind<CR>            " Find the current file in the tree
 
-          let NERDTreeWinSize=20
-          let NERDTreeShowLineNumbers=1
-          let NERDTreeShowBookmarks=1
-          let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-          let NERDTreeChDirMode=0
-          let NERDTreeQuitOnOpen=1
-          let NERDTreeMouseMode=2
-          let NERDTreeShowHidden=1
-          let NERDTreeKeepTreeInNewTab=1
-          let NERDTreeCaseSensitiveSort=1
-          let NERDTreeNaturalSort=1
-          let g:nerdtree_tabs_open_on_gui_startup=1
-          let g:nerdtree_tabs_open_on_console_startup=1
-          endif 
+        let NERDTreeWinSize=20
+        let NERDTreeShowLineNumbers=1
+        let NERDTreeShowBookmarks=1
+        let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+        let NERDTreeChDirMode=0
+        let NERDTreeQuitOnOpen=1         
+        let NERDTreeMouseMode=2
+        let NERDTreeShowHidden=1
+        let NERDTreeKeepTreeInNewTab=1
+        let NERDTreeCaseSensitiveSort=1
+        let NERDTreeNaturalSort=1
+        let g:nerdtree_tabs_open_on_gui_startup=1
+        let g:nerdtree_tabs_open_on_console_startup=1
+        endif 
 
     " }
+
+    " Air-line {
+
+        if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+        let g:airline#extensions#tabline#enabled = 1   " enable tabline
+        noremap <leader><C-n> :bnext<CR>
+        noremap <leader><C-p> :bprev<CR>
+        endif
+
+    " }
+
+    " TagBar {
+
+        if has('unix')
+        let g:tagbar_ctags_bin = '/usr/bin/ctags'
+        elseif has('mac')
+        let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+        elseif has('win32')
+        let g:tagbar_ctags_bin = 'C:\Program Files\ctags58\ctags.exe'
+        endif
+
+        if isdirectory(expand("~/.vim/bundle/tagbar/"))
+        nnoremap <silent> <leader>tt :TagbarToggle<CR> " enter tagbartoggle
+        let g:tagbar_show_linenumbers = 1     " enable line
+        let g:tagbar_width = 20
+        autocmd vimenter * Tagbar
+        endif
+
+     " }
+
+     " Auto-pairs {
+
+         if isdirectory(expand("~/.vim/bundle/auto-pairs/"))
+         let g:AutoPairs['<']='>'    " add pairs <>
+         let g:AutoPairsFlyMode = 1  " enable flymode
+         endif
+
+     " }
+
+     " Undotree {
+
+         if isdirectory(expand("~/.vim/bundle/undotree/"))
+         nnoremap <Leader>ut :UndotreeToggle<CR>
+         " If undotree is opened, it is likely one wants to interact with it.
+         let g:undotree_SetFocusWhenToggle=1
+         set undodir='~/.undodir/'
+         set undofile
+         endif
+
+     " }
+
+     " Nerdcommenter {
+
+         if isdirectory(expand("~/.vim/bundle/nerdcommenter/"))
+         let g:NERDSpaceDelims = 1             " Add spaces after comment delimiters by default
+         let g:NERDCompactSexyComs = 1         " Use compact syntax for prettified multi-line comments
+         let g:NERDDefaultAlign = 'left'       " Align line-wise comment delimiters flush left
+         let g:NERDCommentEmptyLines = 1       " Allow commenting and inverting empty lines
+         let g:NERDTrimTrailingWhitespace = 1  " Enable trimming of trailing whitespace when uncommenting
+         endif
+
+     " }
+
+     " Fugitive {
+
+          if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+          nnoremap <silent> <leader>gs :Gstatus<CR>
+          nnoremap <silent> <leader>gd :Gdiff<CR>
+          nnoremap <silent> <leader>gc :Gcommit<CR>
+          nnoremap <silent> <leader>gb :Gblame<CR>
+          nnoremap <silent> <leader>gl :Glog<CR>
+          nnoremap <silent> <leader>gp :Gpush<CR>
+          nnoremap <silent> <leader>gr :Gread<CR>
+          nnoremap <silent> <leader>gw :Gwrite<CR>
+          nnoremap <silent> <leader>ge :Gedit<CR>
+          " Mnemonic _i_nteractive
+          nnoremap <silent> <leader>gi :Git add -p %<CR>
+          nnoremap <silent> <leader>gg :SignifyToggle<CR>
+          endif
+
+     " }
+
+     " Tabular {
+
+         if isdirectory(expand("~/.vim/bundle/tabular"))
+         nmap <Leader>a& :Tabularize /&<CR>
+         vmap <Leader>a& :Tabularize /&<CR>
+         nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+         vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+         nmap <Leader>a=> :Tabularize /=><CR>
+         vmap <Leader>a=> :Tabularize /=><CR>
+         nmap <Leader>a: :Tabularize /:<CR>
+         vmap <Leader>a: :Tabularize /:<CR>
+         nmap <Leader>a:: :Tabularize /:\zs<CR>
+         vmap <Leader>a:: :Tabularize /:\zs<CR>
+         nmap <Leader>a, :Tabularize /,<CR>
+         vmap <Leader>a, :Tabularize /,<CR>
+         nmap <Leader>a,, :Tabularize /,\zs<CR>
+         vmap <Leader>a,, :Tabularize /,\zs<CR>
+         nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+         vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+         endif
+
+     " }
+
+     " Easy-motion {
+
+           
+
+     " }
+
+     " Ack {
+
+     " }
+
+     " Ctrlp {
+
+     " }
+
+     " Surround {
+
+         if isdirectory(expand("~/.vim/bundle/tabular"))
+         endif
+
+     " }
+
+     " ultisnips {
+
+     " }
 
 " }
