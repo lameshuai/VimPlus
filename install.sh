@@ -55,5 +55,6 @@ echo "Please be patient." >> TempFile
 vim TempFile -c "PluginInstall" -c "q" -c "q"
 rm TempFile
 echo "installation is complete." 
-#cd ~/.vim/bundle/YouCompleteMe
-#sudo ./install.py --clang-completer --system-libclang --system-boost
+cd ~/.vim/bundle/YouCompleteMe
+sudo ./install.py --clang-completer --system-libclang --system-boost
+echo "-------------------Done----------------------------"

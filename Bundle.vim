@@ -21,7 +21,7 @@
     " Code Completion {
 
         Plugin 'mattn/emmet-vim'            " html css javascript
-        Plugin 'Vallrioc/YouCompleteMe'     " A code-completion engine for Vim
+        Plugin 'Valloric/YouCompleteMe'     " A code-completion engine for Vim
 
     " }
 
