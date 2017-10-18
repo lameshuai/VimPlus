@@ -5,7 +5,7 @@
     " Emmet {
  
         if isdirectory(expand("~/.vim/bundle/emmet-vim"))
-        imap <F3> <Esc><C-Y>,i      " map for faster
+        imap <F3> <Esc><C-Y>,i
         endif
 
     " }
@@ -21,7 +21,7 @@
 
 " ColorScheme {
 
-     colorscheme solarized           " Load a colorscheme
+     colorscheme molokai           " Load a colorscheme
 
 " }
 
@@ -30,8 +30,9 @@
     " Nerdtree {
 
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
-        map  <leader>nt :NERDTreeToggle<CR>          " nerdtree key map
-        nmap <leader>nf :NERDTreeFind<CR>            " Find the current file in the tree
+        autocmd vimenter * NERDTree
+        map  <leader>snt :NERDTreeToggle<CR>
+        nmap <leader>snf :NERDTreeFind<CR>
 
         let NERDTreeWinSize=20
         let NERDTreeShowLineNumbers=1
@@ -71,7 +72,7 @@
         endif
 
         if isdirectory(expand("~/.vim/bundle/tagbar/"))
-        nnoremap <silent> <leader>tt :TagbarToggle<CR> " enter tagbartoggle
+        nnoremap <silent> <leader>stt :TagbarToggle<CR>
         let g:tagbar_show_linenumbers = 1     " enable line
         let g:tagbar_width = 20
         autocmd vimenter * Tagbar
@@ -82,7 +83,7 @@
      " Auto-pairs {
 
          if isdirectory(expand("~/.vim/bundle/auto-pairs/"))
-         let g:AutoPairs['<']='>'    " add pairs <>
+         let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}    " add pairs <>
          let g:AutoPairsFlyMode = 1  " enable flymode
          endif
 
@@ -91,7 +92,7 @@
      " Undotree {
 
          if isdirectory(expand("~/.vim/bundle/undotree/"))
-         nnoremap <Leader>ut :UndotreeToggle<CR>
+         map <Leader>sut :UndotreeToggle<CR>
          " If undotree is opened, it is likely one wants to interact with it.
          let g:undotree_SetFocusWhenToggle=1
          set undodir='~/.undodir/'
@@ -115,18 +116,18 @@
      " Fugitive {
 
           if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
-          nnoremap <silent> <leader>gs :Gstatus<CR>
-          nnoremap <silent> <leader>gd :Gdiff<CR>
-          nnoremap <silent> <leader>gc :Gcommit<CR>
-          nnoremap <silent> <leader>gb :Gblame<CR>
-          nnoremap <silent> <leader>gl :Glog<CR>
-          nnoremap <silent> <leader>gp :Gpush<CR>
-          nnoremap <silent> <leader>gr :Gread<CR>
-          nnoremap <silent> <leader>gw :Gwrite<CR>
-          nnoremap <silent> <leader>ge :Gedit<CR>
+          nnoremap <silent> <leader>sgs :Gstatus<CR>
+          nnoremap <silent> <leader>sgd :Gdiff<CR>
+          nnoremap <silent> <leader>sgc :Gcommit<CR>
+          nnoremap <silent> <leader>sgb :Gblame<CR>
+          nnoremap <silent> <leader>sgl :Glog<CR>
+          nnoremap <silent> <leader>sgp :Gpush<CR>
+          nnoremap <silent> <leader>sgr :Gread<CR>
+          nnoremap <silent> <leader>sgw :Gwrite<CR>
+          nnoremap <silent> <leader>sge :Gedit<CR>
           " Mnemonic _i_nteractive
-          nnoremap <silent> <leader>gi :Git add -p %<CR>
-          nnoremap <silent> <leader>gg :SignifyToggle<CR>
+          nnoremap <silent> <leader>sgi :Git add -p %<CR>
+          nnoremap <silent> <leader>sgg :SignifyToggle<CR>
           endif
 
      " }

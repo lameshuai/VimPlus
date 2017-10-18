@@ -27,7 +27,7 @@
 
     " Color Scheme {
 
-        Plugin 'altercation/solarized'    " precision color scheme for multiple applications.
+        Plugin 'tomasr/molokai'    " precision color scheme for multiple applications.
 
      " }
 

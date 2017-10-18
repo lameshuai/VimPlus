@@ -3,7 +3,7 @@
 echo "Installation will take you a little time,please be patient.^_^"
 if which apt-get > /dev/null
 then
-    sudo apt-get install -y ctags build-essential cmake python python-dev python3-dev fontconfig git libclang llvm-4.0 clang-4.0 libclang-4.0-dev libboost-all-dev gcc g++
+    sudo apt-get install -y ctags build-essential cmake python python-dev python3-dev git llvm-4.0 clang-4.0 libclang-4.0-dev libboost-all-dev gcc g++
     var=$(sudo cat /etc/lsb-release | grep "DISTRIB_RELEASE")
     systemVersion='DISTRIB_RELEASE=17.04'
     if [ $var == $systemVersion ]

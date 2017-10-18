@@ -39,13 +39,13 @@
 
 " Use Bundle if available {
     if filereadable(expand("~/Bundle.vim"))
-        source ~/Bundle.vim
+         source ~/Bundle.vim
     endif
 " }
 
 " Use Bundles Config {
     if filereadable(expand("~/BundleConfig.vim"))
-        source ~/BundleConfig.vim
+         source ~/BundleConfig.vim
     endif
 " }
 
@@ -153,7 +153,7 @@
     "set fileencodings=utf-8,gbk,ucs-bom,cp936
     "set fileencoding=gb18030
     "set fileencodings=utf-8,gb18030,utf-16,big5
-    set enc=chinese
+    set enc=utf-8
     "set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
     "set fileencoding=gb2312
 
