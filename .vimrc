@@ -172,7 +172,7 @@
 
     autocmd BufNewFile *.cpp,*.cc,*.c,*.hpp,*.h,*.sh,*.py,*.java exec ":call SetTitle()" 
     func SetTitle() 
-     if expand("%:e") == 'sh'
+    if expand("%:e") == 'sh'
 	call setline(1,"\#!/bin/bash") 
 	call append(line("."), "") 
     elseif expand("%:e") == 'py'
