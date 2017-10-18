@@ -161,7 +161,6 @@
 
 " Key (re)Mappings {
 
-    let mapleader = "-"         " prefix key map
     noremap  <leader>bg :call ToggleBG()<CR>  " change background
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>  " modified config file
     nnoremap <leader>sv :source $MYVIMRC<cr>  " config source file
