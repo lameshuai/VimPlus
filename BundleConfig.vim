@@ -185,6 +185,7 @@
      " Surround {
 
          if isdirectory(expand("~/.vim/bundle/vim-surround"))
+         let g:surround_{char2nr("d")} = "<div\1id: \r..*\r id=\"&\"\1>\r</div>"
          endif
 
      " }
