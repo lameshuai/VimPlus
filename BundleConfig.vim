@@ -12,8 +12,10 @@
 
     " YouCompleteMe {
 
+        if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
         let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
         let g:ycm_server_python_interpreter='/usr/bin/python'
+        endif
 
     " }
 
@@ -53,7 +55,7 @@
 
     " Air-line {
 
-        if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+        if isdirectory(expand("~/.vim/bundle/vim-airline"))
         let g:airline#extensions#tabline#enabled = 1   " enable tabline
         noremap <leader><C-n> :bnext<CR>
         noremap <leader><C-p> :bprev<CR>
@@ -71,7 +73,7 @@
         let g:tagbar_ctags_bin = 'C:\Program Files\ctags58\ctags.exe'
         endif
 
-        if isdirectory(expand("~/.vim/bundle/tagbar/"))
+        if isdirectory(expand("~/.vim/bundle/tagbar"))
         nnoremap <silent> <leader>stt :TagbarToggle<CR>
         let g:tagbar_show_linenumbers = 1     " enable line
         let g:tagbar_width = 20
@@ -82,7 +84,7 @@
 
      " Auto-pairs {
 
-         if isdirectory(expand("~/.vim/bundle/auto-pairs/"))
+         if isdirectory(expand("~/.vim/bundle/auto-pairs"))
          let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}    " add pairs <>
          let g:AutoPairsFlyMode = 1  " enable flymode
          endif
@@ -91,7 +93,7 @@
 
      " Undotree {
 
-         if isdirectory(expand("~/.vim/bundle/undotree/"))
+         if isdirectory(expand("~/.vim/bundle/undotree"))
          map <Leader>sut :UndotreeToggle<CR>
          " If undotree is opened, it is likely one wants to interact with it.
          let g:undotree_SetFocusWhenToggle=1
@@ -103,7 +105,7 @@
 
      " Nerdcommenter {
 
-         if isdirectory(expand("~/.vim/bundle/nerdcommenter/"))
+         if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
          let g:NERDSpaceDelims = 1             " Add spaces after comment delimiters by default
          let g:NERDCompactSexyComs = 1         " Use compact syntax for prettified multi-line comments
          let g:NERDDefaultAlign = 'left'       " Align line-wise comment delimiters flush left
@@ -115,7 +117,7 @@
 
      " Fugitive {
 
-          if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+          if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
           nnoremap <silent> <leader>sgs :Gstatus<CR>
           nnoremap <silent> <leader>sgd :Gdiff<CR>
           nnoremap <silent> <leader>sgc :Gcommit<CR>
@@ -156,27 +158,37 @@
      " }
 
      " Easy-motion {
-
+         
+         if isdirectory(expand("~/.vim/bundle/vim-easymotion"))
+         endif
            
-
      " }
 
      " Ack {
+
+         if isdirectory(expand("~/.vim/bundle/ack-vim"))
+         endif
 
      " }
 
      " Ctrlp {
 
+         if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
+         endif
+
      " }
 
      " Surround {
 
-         if isdirectory(expand("~/.vim/bundle/tabular"))
+         if isdirectory(expand("~/.vim/bundle/vim-surround"))
          endif
 
      " }
 
      " ultisnips {
+
+         if isdirectory(expand("~/.vim/bundle/ultisnips"))
+         endif
 
      " }
 
