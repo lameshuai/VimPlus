@@ -193,6 +193,12 @@
      " ultisnips {
 
          if isdirectory(expand("~/.vim/bundle/ultisnips"))
+         let g:UltiSnipsUsePythonVersion = 2
+         let g:UltiSnipsSnippetsDir = "~/.vim/bundle/UltiSnips"
+         let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+         let g:UltiSnipsExpandTrigger="<c-j>"
+         let g:UltiSnipsJumpForwardTrigger="<c-b>"
+         let g:UltiSnipsJumpBackwardTrigger="<c-z>"
          endif
 
      " }
