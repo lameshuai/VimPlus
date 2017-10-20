@@ -1,4 +1,4 @@
-#+TITLE: My Vim Configuration
+# My Vim Configuration
 
 This is a vim configuration tree since 2017. 
 
