@@ -171,6 +171,9 @@
      " Ack {
 
          if isdirectory(expand("~/.vim/bundle/ack-vim"))
+         map <Leader>sac :Ack!<Space> 
+         let g:ackhighlight = 1
+         let g:ack_qhandler = "botright copen 15"
          endif
 
      " }
