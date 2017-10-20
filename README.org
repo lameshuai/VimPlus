@@ -1,7 +1,9 @@
-# My Vim Configuration
+#My Vim Configuration
 
 This is a vim configuration tree since 2017. 
 
-# Installation
-## Requirements
+***
+
+#Installation
+##Requirements
 If you want to install [Tagbar], you have to download ctags on your computer。
