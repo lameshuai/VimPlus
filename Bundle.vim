@@ -38,7 +38,7 @@
         Plugin 'majutsushi/tagbar'         " a class outline viewer for Vim
         Plugin 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens, quotes in pair.
         Plugin 'mbbill/undotree'           " The ultimate undo history visualizer for VIM
-        Plugin 'scrooloose/nerdcommenter'  " Comment functions so powerful¡ªno comment necessary.
+        Plugin 'scrooloose/nerdcommenter'  " Comment functions so powerfulÂ¡Âªno comment necessary.
         Plugin 'tpope/vim-fugitive'        " a Git wrapper so awesome, it should be illegal
         Plugin 'godlygeek/tabular'         " text filtering and alignment
         Plugin 'easymotion/vim-easymotion' " Vim motion on speed!
@@ -46,6 +46,7 @@
         Plugin 'kien/ctrlp.vim'            " Fuzzy file, buffer, mru, tag, etc finder
         Plugin 'tpope/vim-surround'        " easily delete, change and add such surroundings in pairs.
         Plugin 'sirver/ultisnips'          " provide support for textual snippets
+        Plugin 'terryma/vim-multiple-cursors' " True Sublime Text style multiple selections for Vim
 
     " }
 
