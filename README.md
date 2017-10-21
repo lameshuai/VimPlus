@@ -42,6 +42,7 @@ You need to install it online and replace the latest source.
 * [ctrlp.vim][14]
 * [vim-surround][15]
 * [ultisnips][16]
+* [vim-multiple-cursors][17]
 <br />
 
 If you want to add the plug-in you want,   ```cd ~/Bundle.vim.```
@@ -73,3 +74,4 @@ still experience problems, go ahead and [file an issue on the githubproject](htt
 [14]: https://github.com/kien/ctrlp.vim
 [15]: https://github.com/tpope/vim-surround
 [16]: https://github.com/SirVer/ultisnips
+[17]: https://github.com/terryma/vim-multiple-cursors
