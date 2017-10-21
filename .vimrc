@@ -92,7 +92,7 @@
     set mouse=a 		" enable mouse everywhere
     set selection=exclusive     " enable selectmode
     set selectmode=mouse,key    " contain mouse key
-    set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1 " file encoding
+    set fileencodings=utf-8,chinese,latin-1 " file encoding
     set nobackup 		" do not backup files
     "set backup                 " backup files
     syntax enable               " syntax enable
@@ -145,7 +145,7 @@
     "set nowrap 		" do not auto-fill
 
     " file formats
-    "set fileformats=unix,dos
+    set fileformats=unix,dos
     "set fileformat=mac
 
     " set editing enviroment
