@@ -195,7 +195,6 @@
          let g:ctrlp_follow_symlinks=1
          let g:ctrlp_switch_buffer = 'Et'
          endif
-         endif
 
      " }
 
@@ -222,9 +221,11 @@
      
      " multiple-cursor {
 
+         if isdirectory(expand("~/.vim/bundle/vim-multiple-cursors"))
          nnoremap <C-c> :call multiple_cursors#quit()<CR>
          highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
          highlight link multiple_cursors_visual Visual
+         endif
 
      " }
 
