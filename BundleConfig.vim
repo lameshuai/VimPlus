@@ -32,7 +32,7 @@
     " Nerdtree {
 
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
-        autocmd vimenter * NERDTree
+        autocmd VimEnter * silent NERDTree | wincmd p
         map  <leader>snt :NERDTreeToggle<CR>
         nmap <leader>snf :NERDTreeFind<CR>
 
